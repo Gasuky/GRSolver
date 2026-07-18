@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gabriel Rodriguez — Independent Inventor & Technology Solver</title>
+<style>
+  :root {
+    --ink:    #1a1a2e;
+    --paper:  #f7f6f2;
+    --mid:    #5a5a72;
+    --rule:   #d8d6ce;
+    --accent: #2563a8;
+    --gold:   #b08a3e;
+    --mono:   'Courier New', Courier, monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── HEADER ── */
+  header {
+    border-bottom: 2px solid var(--ink);
+    padding: 56px 0 40px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: normal;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+
+  .subtitle {
+    font-size: 1.05rem;
+    color: var(--mid);
+    font-style: italic;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* ── NAV ── */
+  nav {
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+    z-index: 10;
+  }
+
+  nav a {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    margin: 0 20px;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--accent); }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  section {
+    padding: 64px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  section:last-of-type { border-bottom: none; }
+
+  h2 {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 36px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  h2::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+
+  /* ── ABOUT ── */
+  .about-text p { margin-bottom: 18px; color: var(--ink); }
+  .about-text p:last-child { margin-bottom: 0; }
+
+  .about-text strong { color: var(--accent); font-style: normal; }
+
+  /* ── PROCESS ── */
+  .process-list {
+    list-style: none;
+    counter-reset: process;
+  }
+
+  .process-list li {
+    counter-increment: process;
+    display: flex;
+    gap: 20px;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  .process-list li:last-child { border-bottom: none; }
+
+  .process-list li::before {
+    content: counter(process, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 1px;
+    flex-shrink: 0;
+    padding-top: 3px;
+  }
+
+  /* ── INTERESTS GRID ── */
+  .interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .tag {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border: 1px solid var(--rule);
+    padding: 6px 14px;
+    border-radius: 2px;
+    color: var(--mid);
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .tag:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── PATENTS ── */
+  .patent-card {
+    border-left: 3px solid var(--gold);
+    padding: 24px 0 24px 24px;
+    margin-bottom: 36px;
+  }
+
+  .patent-card:last-child { margin-bottom: 0; }
+
+  .patent-number {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .patent-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+
+  .patent-body {
+    font-size: 0.92rem;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  .patent-issuer {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--rule);
+    margin-top: 10px;
+  }
+
+  /* ── PROJECTS ── */
+  .project-card {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .project-card:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .project-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .project-title {
+    font-size: 1.15rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .project-body {
+    font-size: 0.93rem;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  /* ── CONTACT ── */
+  .contact-block {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .contact-line {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 0.95rem;
+  }
+
+  .contact-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--mid);
+    min-width: 60px;
+  }
+
+  .contact-value { color: var(--ink); }
+  .contact-value a { color: var(--accent); text-decoration: none; }
+  .contact-value a:hover { text-decoration: underline; }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 32px 0;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--rule);
+    border-top: 1px solid var(--rule);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    nav a { margin: 0 10px; font-size: 10px; }
+    h1 { font-size: 2rem; }
+    .patent-card { padding-left: 16px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <p class="eyebrow">Independent Inventor · Scotland, United Kingdom</p>
+    <h1>Gabriel Rodriguez</h1>
+    <p class="subtitle">I find connections between fields that specialists rarely cross, and turn them into solutions.</p>
+  </div>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#patents">Patents</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2>About</h2>
+      <div class="about-text">
+        <p>
+          I am an independent inventor and technology solver based in the Scottish Highlands.
+          I hold <strong>two granted UK patents</strong> developed entirely through independent 
+          research — without institutional affiliation, laboratory access, or prior funding.
+        </p>
+        <p>
+          My approach is built on first-principles reasoning and cross-domain thinking.
+          I look for problems where the solution already exists in a different field,
+          and where connecting those fields produces something genuinely new.
+        </p>
+        <p>
+          I am not a company or academic institution. I work for Royal Mail and
+          as a self-employed painter. Innovation is what I do with the time and
+          energy I have left — and that constraint has never stopped me from 
+          getting to a granted patent.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="container">
+      <h2>How I Work</h2>
+      <ul class="process-list">
+        <li>Define the real problem, not the stated one</li>
+        <li>Map what already exists and why it fails</li>
+        <li>Identify the constraint that everyone has accepted</li>
+        <li>Search adjacent fields for mechanisms that remove it</li>
+        <li>Build the minimum concept that proves the connection is valid</li>
+        <li>Stress-test it against the strongest objection I can find</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- INTERESTS -->
+  <section id="interests">
+    <div class="container">
+      <h2>Fields</h2>
+      <div class="interests">
+        <span class="tag">Hardware Security</span>
+        <span class="tag">Nanomechanical Systems</span>
+        <span class="tag">Physical Unclonable Functions</span>
+        <span class="tag">Semiconductor Architecture</span>
+        <span class="tag">Carbon Nanotube Technology</span>
+        <span class="tag">Acoustic Wave Devices</span>
+        <span class="tag">Cyber-Physical Systems</span>
+        <span class="tag">Open Innovation</span>
+        <span class="tag">Communication Systems</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATENTS -->
+  <section id="patents">
+    <div class="container">
+      <h2>Granted Patents</h2>
+
+      <div class="patent-card">
+        <p class="patent-number">GB2615187.8</p>
+        <p class="patent-title">CNT-NEMS Acoustic Switch Architecture</p>
+        <p class="patent-body">
+          Carbon nanotube nanoelectromechanical switches activated by bulk acoustic 
+          waves propagating through a silicon substrate via an aluminium nitride 
+          piezoelectric layer. The architecture enables zero-leakage power gating 
+          in integrated circuits — eliminating static current loss across entire 
+          logic domains without conventional control wiring — and opens new 
+          directions in physical hardware identity primitives.
+        </p>
+        <p class="patent-issuer">UK Intellectual Property Office</p>
+      </div>
+
+      <div class="patent-card">
+        <p class="patent-number">GB2614957.5</p>
+        <p class="patent-title">Molecular Dielectric Interface for Piezoelectric-Semiconductor Integration</p>
+        <p class="patent-body">
+          A self-assembled monolayer derived from functionalised perfluorinated 
+          compounds, positioned between a crystalline alpha-quartz substrate and 
+          an active silicon logic layer. The interface provides simultaneous 
+          electrical isolation, thermal protection below the 573 °C quartz 
+          degradation threshold, and lossless acoustic transmission of 
+          piezoelectric clock signals directly into the transistor matrix — 
+          resolving two previously insurmountable barriers to integrating 
+          on-chip quartz oscillators.
+        </p>
+        <p class="patent-issuer">UK Intellectual Property Office</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <h2>Current Work</h2>
+
+      <div class="project-card">
+        <p class="project-label">Hardware Security · Active</p>
+        <p class="project-title">Physical Identity Primitive Based on Patented Nanomechanical Architecture</p>
+        <p class="project-body">
+          Investigating a new class of physically unclonable function derived from 
+          the nanomechanical properties inherent to the architecture in patent 
+          GB2615187.8. The approach exploits atomic-scale fabrication variability 
+          as a cryptographic entropy source — producing device identities that 
+          are grounded in quantum mechanics rather than computational assumptions, 
+          and that register physical tampering irreversibly in the material itself.
+          Proposal submitted to ARIA Trust Everything, Everywhere 2026.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <p class="project-label">Communication Systems · Past</p>
+        <p class="project-title">Underground RF Communication in Confined Tunnel Environments</p>
+        <p class="project-body">
+          Developed a technical solution for reliable radio communication through 
+          extended tunnel and underground environments for an open innovation 
+          challenge. Addressed signal propagation, antenna geometry constraints, 
+          and link budget requirements specific to confined subterranean channels.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <p class="project-label">Open Innovation · Ongoing</p>
+        <p class="project-title">Technology Challenge Solving</p>
+        <p class="project-body">
+          Active participant in open innovation platforms including InnoCentive, 
+          yet2, and Wazoku. I engage with unsolved technical problems across 
+          materials science, hardware engineering, and systems design — 
+          contributing conceptual solutions from an independent, 
+          cross-disciplinary perspective.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="contact-block">
+        <div class="contact-line">
+          <span class="contact-label">Name</span>
+          <span class="contact-value">Gabriel Rodriguez Garrido</span>
+        </div>
+        <div class="contact-line">
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Scottish Highlands, United Kingdom</span>
+        </div>
+        <div class="contact-line">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">
+            <a href="mailto:AribeaIA@Proton.me">AribeaIA@Proton.me</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    © Gabriel Rodriguez Garrido · Scottish Highlands, UK
+  </div>
+</footer>
+
+</body>
+</html>
