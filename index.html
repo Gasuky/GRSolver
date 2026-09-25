@@ -120,7 +120,6 @@
   /* ── ABOUT ── */
   .about-text p { margin-bottom: 18px; color: var(--ink); }
   .about-text p:last-child { margin-bottom: 0; }
-
   .about-text strong { color: var(--accent); font-style: normal; }
 
   /* ── PROCESS ── */
@@ -296,7 +295,7 @@
 
 <header>
   <div class="container">
-    <p class="eyebrow">Independent Solver ·  United Kingdom</p>
+    <p class="eyebrow">Independent Solver · United Kingdom</p>
     <h1>Gabriel Rodriguez</h1>
     <p class="subtitle">I find connections between fields that specialists rarely cross, and turn them into solutions.</p>
   </div>
@@ -318,7 +317,7 @@
       <div class="about-text">
         <p>
           I am an independent inventor and technology solver based in Scotland.
-          I hold <strong>two granted UK patents</strong> developed entirely through independent 
+          I hold <strong>four active UK patent applications</strong> developed entirely through independent
           research — without institutional affiliation, laboratory access, or prior funding.
         </p>
         <p>
@@ -329,8 +328,8 @@
         <p>
           I am not a company or academic institution. I work for Royal Mail and
           as a self-employed painter. Innovation is what I do with the time and
-          energy I have left — and that constraint has never stopped me from 
-          getting to a granted patent.
+          energy I have left — and that constraint has never stopped me from
+          reaching a filed patent.
         </p>
       </div>
     </div>
@@ -361,6 +360,8 @@
         <span class="tag">Physical Unclonable Functions</span>
         <span class="tag">Semiconductor Architecture</span>
         <span class="tag">Carbon Nanotube Technology</span>
+        <span class="tag">Graphene Engineering</span>
+        <span class="tag">Non-Volatile Memory</span>
         <span class="tag">Acoustic Wave Devices</span>
         <span class="tag">Cyber-Physical Systems</span>
         <span class="tag">Open Innovation</span>
@@ -372,34 +373,75 @@
   <!-- PATENTS -->
   <section id="patents">
     <div class="container">
-      <h2>Granted Patents</h2>
+      <h2>UK Patent Applications</h2>
 
+      <!-- Patent 1: SAM -->
       <div class="patent-card">
-        <p class="patent-number">GB2615187.8</p>
-        <p class="patent-title">CNT-NEMS Acoustic Switch Architecture</p>
+        <p class="patent-number">GB2614957.5 · Filed June 2026</p>
+        <p class="patent-title">Molecular Dielectric Interface for Piezoelectric-Semiconductor Integration</p>
         <p class="patent-body">
-          Carbon nanotube nanoelectromechanical switches activated by bulk acoustic 
-          waves propagating through a silicon substrate via an aluminium nitride 
-          piezoelectric layer. The architecture enables zero-leakage power gating 
-          in integrated circuits — eliminating static current loss across entire 
-          logic domains without conventional control wiring — and opens new 
-          directions in physical hardware identity primitives.
+          A self-assembled monolayer derived from functionalised perfluorinated
+          compounds, positioned between a crystalline alpha-quartz substrate and
+          an active silicon logic layer. The interface provides simultaneous
+          electrical isolation, thermal protection below the 573&thinsp;°C quartz
+          degradation threshold, and lossless acoustic transmission of
+          piezoelectric clock signals directly into the transistor matrix —
+          resolving two previously insurmountable barriers to integrating
+          on-chip quartz oscillators.
         </p>
         <p class="patent-issuer">UK Intellectual Property Office</p>
       </div>
 
+      <!-- Patent 2: CNT-NEMS -->
       <div class="patent-card">
-        <p class="patent-number">GB2614957.5</p>
-        <p class="patent-title">Molecular Dielectric Interface for Piezoelectric-Semiconductor Integration</p>
+        <p class="patent-number">GB2615187.8 · Filed July 2026</p>
+        <p class="patent-title">Carbon Nanotube Nanoelectromechanical Architecture for Integrated Circuit Control</p>
         <p class="patent-body">
-          A self-assembled monolayer derived from functionalised perfluorinated 
-          compounds, positioned between a crystalline alpha-quartz substrate and 
-          an active silicon logic layer. The interface provides simultaneous 
-          electrical isolation, thermal protection below the 573 °C quartz 
-          degradation threshold, and lossless acoustic transmission of 
-          piezoelectric clock signals directly into the transistor matrix — 
-          resolving two previously insurmountable barriers to integrating 
-          on-chip quartz oscillators.
+          A nanoelectromechanical architecture based on carbon nanotube elements
+          integrated within a silicon substrate. The design achieves near-absolute
+          isolation in the off-state — a fundamental property of physical separation
+          unavailable to conventional field-effect transistors — enabling power
+          isolation of logic domains, elimination of static leakage pathways, and
+          new approaches to hardware-level state control in integrated circuits.
+          The architecture also provides a foundation for hardware identity
+          primitives whose uniqueness is grounded in the irreducible physical
+          variability of nanoscale geometry.
+        </p>
+        <p class="patent-issuer">UK Intellectual Property Office</p>
+      </div>
+
+      <!-- Patent 3: Graphene memory -->
+      <div class="patent-card">
+        <p class="patent-number">SR0000258641 · Filed 19 September 2026</p>
+        <p class="patent-title">Non-Volatile Memory Device Incorporating a Graphene Network and Piezoelectric Substrate</p>
+        <p class="patent-body">
+          A solid-state non-volatile memory architecture in which atomically modified
+          graphene networks serve as the storage medium. The device encodes binary
+          states at the atomic scale without direct electrical current injection
+          during write operations — eliminating Joule heating and quantum-tunnelling
+          leakage that constrain all existing non-volatile memory technologies.
+          Stored states are retained without active power. The architecture supports
+          three-dimensional stacking and crossbar array addressing, enabling
+          storage densities that cannot be approached by charge-trap or
+          resistance-change memory on silicon.
+        </p>
+        <p class="patent-issuer">UK Intellectual Property Office</p>
+      </div>
+
+      <!-- Patent 4: Unified RAM -->
+      <div class="patent-card">
+        <p class="patent-number">SR0000258641-A · Filed 22 September 2026</p>
+        <p class="patent-title">Unified Volatile and Non-Volatile Memory Architecture for Direct Microprocessor Integration</p>
+        <p class="patent-body">
+          A memory architecture that collapses the conventional boundary between
+          volatile working memory and persistent storage into a single graphene-based
+          layer, packaged directly within the same enclosure as the host processor.
+          The design eliminates the bandwidth and latency penalties of off-die memory
+          hierarchies, operates without write-current thermal dissipation, and scales
+          to terabyte-class densities in a form factor compatible with high-bandwidth
+          memory (HBM) and GPU VRAM requirements. Directly applicable as a
+          replacement for HBM stacks in AI data-centre accelerators and as
+          system RAM in consumer computing hardware.
         </p>
         <p class="patent-issuer">UK Intellectual Property Office</p>
       </div>
@@ -416,11 +458,11 @@
         <p class="project-label">Hardware Security · Active</p>
         <p class="project-title">Physical Identity Primitive Based on Patented Nanomechanical Architecture</p>
         <p class="project-body">
-          Investigating a new class of physically unclonable function derived from 
-          the nanomechanical properties inherent to the architecture in patent 
-          GB2615187.8. The approach exploits atomic-scale fabrication variability 
-          as a cryptographic entropy source — producing device identities that 
-          are grounded in quantum mechanics rather than computational assumptions, 
+          Investigating a new class of physically unclonable function derived from
+          the nanomechanical properties inherent to the architecture in patent
+          GB2615187.8. The approach exploits atomic-scale fabrication variability
+          as a cryptographic entropy source — producing device identities that
+          are grounded in quantum mechanics rather than computational assumptions,
           and that register physical tampering irreversibly in the material itself.
           Proposal submitted to ARIA Trust Everything, Everywhere 2026.
         </p>
@@ -430,9 +472,9 @@
         <p class="project-label">Communication Systems · Past</p>
         <p class="project-title">Underground RF Communication in Confined Tunnel Environments</p>
         <p class="project-body">
-          Developed a technical solution for reliable radio communication through 
-          extended tunnel and underground environments for an open innovation 
-          challenge. Addressed signal propagation, antenna geometry constraints, 
+          Developed a technical solution for reliable radio communication through
+          extended tunnel and underground environments for an open innovation
+          challenge. Addressed signal propagation, antenna geometry constraints,
           and link budget requirements specific to confined subterranean channels.
         </p>
       </div>
@@ -441,10 +483,10 @@
         <p class="project-label">Open Innovation · Ongoing</p>
         <p class="project-title">Technology Challenge Solving</p>
         <p class="project-body">
-          Active participant in open innovation platforms including InnoCentive, 
-          yet2, and Wazoku. I engage with unsolved technical problems across 
-          materials science, hardware engineering, and systems design — 
-          contributing conceptual solutions from an independent, 
+          Active participant in open innovation platforms including InnoCentive,
+          yet2, and Wazuku. I engage with unsolved technical problems across
+          materials science, hardware engineering, and systems design —
+          contributing conceptual solutions from an independent,
           cross-disciplinary perspective.
         </p>
       </div>
